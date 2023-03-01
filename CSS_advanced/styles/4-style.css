@@ -18,7 +18,7 @@ body {
     font-family: var(--font-family-base);
 }
 
-h1, h2 {
+h1 to h6 {
     font-family: var(--font-family-title);
 }
 
