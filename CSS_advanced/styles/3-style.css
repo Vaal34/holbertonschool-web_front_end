@@ -1,21 +1,7 @@
 html {
     scroll-behavior: smooth;
-    }
-body {
-    color: var(--text-color);
 }
-a {
-    color: var(--text-color);
-}
-.visually-hidden {
-    display: none;
-}
-.card-category {
-    color: var(--color-primary);
-}
-.section-tagline {
-    color: var(--color-primary);
-}
+
 :root {
     --color-primary: #d73953;
     --color-black: #090909;
@@ -23,4 +9,24 @@ a {
     --color-light-grey: #f3f3f3;
     --color-dakr-grey: #353535;
     --text-color: var(--color-black);
+}
+
+body {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.card-category {
+    color: var(--color-primary);
+}
+
+.section-tagline {
+    color: var(--color-primary);
 }
