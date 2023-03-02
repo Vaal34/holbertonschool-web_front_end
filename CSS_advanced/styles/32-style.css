@@ -123,7 +123,9 @@ a:active {
     color: var(--button-hover-color);
     text-decoration: var(--button-hover-text-decoration);
     background-color: var(--button-hover-background);
-    transition: var(--transition-duration);
+    transition-duration: var(--transition-duration);
+    transition-property: color;
+    transition-property: background-color;
 }
 
 ul.row {
@@ -184,7 +186,7 @@ ul.row {
     background-color: var(--color-white);
     width: 0;
     height: 0.2rem;
-    transition: var(--transition-duration) var(--transition-duration);
+    transition: var(--transition-duration) var(--transition-cubic-bezier)
 }
 
 .nav .nav-link:hover {
@@ -268,7 +270,7 @@ ul.row {
     transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-.card-outer .card-work:hover {
+.card-work:hover .card-outer {
     transform: scale(0.95);
 }
 
