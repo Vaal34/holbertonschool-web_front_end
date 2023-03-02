@@ -266,13 +266,21 @@ ul.row {
 
 .card-work .card-title {
     display: block;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+    height: 100%;
+    position: relative;
     text-decoration: none;
     padding-top: 0.45rem;
 }
 
 .card-work .card-title a::after {
     position: absolute;
-    position: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     content: "";
 }
 
