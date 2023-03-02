@@ -93,7 +93,7 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
-header {
+.header {
     padding: var(--header-padding);
 }
 
@@ -101,7 +101,7 @@ header {
     position: var(--header-logo-link-position);
 }
 
-.header-logo link {
+.header-logo a {
     display: var(--header-logo-link-display);
     position: var(--header-logo-link-position);
     top: var(--header-logo-link-top);
