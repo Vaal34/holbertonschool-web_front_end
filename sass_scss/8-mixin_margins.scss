@@ -1,0 +1,15 @@
+@mixin margin_lr_10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@mixin margin_lr_15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+body {
+    @include margin_lr_10() }
+  
+div {
+    @include margin_lr_15() }
