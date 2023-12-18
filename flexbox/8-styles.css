@@ -360,7 +360,7 @@
   .section-hero .section-inner {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
+    align-self: start;
     justify-content: center;
     min-height: 50vh;
   }
