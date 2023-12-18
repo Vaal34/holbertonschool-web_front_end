@@ -532,6 +532,12 @@
 /* Section HERO (article)
     ============================= */
 
+    
+.hero-article {
+  background-size: 150rem 100rem;
+  background-position: 50% 0;
+}
+    
 .hero-article::before {
   content: empty;
   background: rgba(0, 0, 0, 0.8);
@@ -541,11 +547,6 @@
   left: 0;
   bottom: 0;
   z-index: 0;
-}
-
-.hero-article {
-  background-size: 150rem 100rem;
-  background-position: 50% 0;
 }
 
 .hero-article .section-inner {
