@@ -748,6 +748,7 @@ input[type=text]:focus,  input[type=email]:focus, textarea:focus {
   max-height: 0;
   transition: .3s;
   overflow: hidden;
+  background-color: var(--color-light-grey);
 }
 
 .form-group:focus-within .form-help {
