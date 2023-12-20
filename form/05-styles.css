@@ -712,8 +712,8 @@ input[type=text]:focus,  input[type=email]:focus, textarea:focus {
   font-style: italic;
 }
 
-/* Form group
-============================= */
+ /* Form group
+  ============================= */
 
 .form-group {
   padding: 1rem;
@@ -721,7 +721,7 @@ input[type=text]:focus,  input[type=email]:focus, textarea:focus {
   background-color: var(--color-white);
 }
 
-.focus-group .focus-within {
+.form-group:focus-within {
   background-color: var(--color-light-grey);
   transition: .3s;
 }
