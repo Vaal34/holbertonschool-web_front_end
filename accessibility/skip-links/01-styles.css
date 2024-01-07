@@ -190,7 +190,7 @@
     white-space: nowrap;
   }
 
-  .off_screen {
+  .off-screen {
     left: -100vw;
     position: absolute;
   }
