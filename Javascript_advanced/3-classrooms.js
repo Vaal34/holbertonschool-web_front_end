@@ -14,4 +14,7 @@ function createClassRoom(numberOfStudents) {
     return students;
 }
 
-const classRoom = createClassRoom(10);
+const classRoom = createClassRoom(10); // createClassRoom return an array 
+
+// if you use classRoom you need to call like this
+// classRoom[9]() because classRoom is an array
