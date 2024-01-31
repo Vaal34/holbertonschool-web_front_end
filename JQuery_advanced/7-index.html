@@ -17,7 +17,6 @@
                     $("body").append("<ul>")
 
                     $("input[type='submit']").on("click", function(){
-                        $("li").remove();
                         queryWikipedia(`${$("input[type='text']").val()}`)
                     });
                 }
