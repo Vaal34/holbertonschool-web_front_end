@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 1</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(document).ready(function() { // Utilisez $(document).ready() pour attendre que le DOM soit prêt
+                function createSearchForm() {
+                    $("body").append("<input type='text'>")
+                    $("body").append("<input type='submit'>")
+                    $("body").append("<ul>")
+
+                    $("input[type='submit']").on("click", function(){
+                        $("li").remove();
+                        queryWikipedia(`${$("input[type='text']").val()}`)
+                    });
+                }
+
+                function addNewArticle(id, title, snippet) {
+                    $("body ul").append(
+                        $("<li>").append(
+                            $("<p>").append(
+                                $("<span>").text(`${id} - `),
+                                $("<b>").text(`${title}`)
+                            ),
+                            $("<p>").html(`${snippet}`)
+                        )
+                    )
+                }
+
+                function queryWikipedia(search) {
+                    let dataObject = {
+                        action: 'query',
+                        format: 'json',
+                        list: 'search',
+                        srsearch: `${search}`,
+                        origin: "*",
+                    };    
+
+                    let data = $.ajax({
+                        url:'https://en.wikipedia.org/w/api.php',
+                        method: "GET",
+                        data: dataObject,
+                        dataType: 'json',
+                        success: function (response) {
+                            for(let i = 0; i < 10; i++) {
+                                let id = response.query.search[i].pageid;
+                                let title = response.query.search[i].title;
+                                let snippet = response.query.search[i].snippet;
+                                addNewArticle(id, title, snippet)
+                            }
+                            console.log(response)
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                        }
+                    })
+                };
+
+                createSearchForm();
+                queryWikipedia('Javascript');
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
