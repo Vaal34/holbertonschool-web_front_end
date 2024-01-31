@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 1</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(document).ready(function() { // Utilisez $(document).ready() pour attendre que le DOM soit prêt
+                function createFamilyTree() {
+                    let table = "<table>";
+                    table += "<thead><tr><th>Firstname</th><th>Lastname</th></tr></thead>";
+
+                    let contents = [['Guillaume', 'Salva'], ['Paulette', 'Salva'], ['Antoine', 'Salva']];
+
+                    // tbody
+                    let tableBody = "<tbody>";
+
+                    for(let i = 0; i < contents.length; i++) {
+                        let content = contents[i];
+                        tableBody += "<tr>";
+                        for(let j = 0; j < content.length; j++) {
+                            tableBody += "<td>" + content[j] + "</td>";
+                        }
+                        tableBody += "</tr>"; // Correction ici, utilisez "</tr>" pour fermer la ligne
+                    }
+
+                    table += tableBody + "</tbody></table>"; // Correction ici, utilisez "</tbody>" pour fermer le corps de la table
+                    $('body').append(table);
+                }
+            createFamilyTree();
+        });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
