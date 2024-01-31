@@ -20,6 +20,8 @@ function countPrimeNumbers() {
     return count;
 }
 
+
+
 const t0 = performance.now();
 
 for(let countusefonction = 0; countusefonction <= 100; countusefonction++) {

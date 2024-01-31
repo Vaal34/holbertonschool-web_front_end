@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 1</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(document).ready(function() { // Utilisez $(document).ready() pour attendre que le DOM soit prêt
+                function createFamilyTree() {
+                    $('body').append(
+                        $("<table>").append(
+                            $("<thead>").append(
+                                $("<tr>").append(
+                                   $("<th>").text('Firstname'),
+                                   $("<th>").text('Lastname')    
+                                )
+                            ),
+                            $("<tbody>").append()
+                        )
+                    );
+                };
+
+                function addNewMenber(firstname, lastname, position) {
+                    
+                    if(position==="before") {
+                        $("table tbody tr:first").before(
+                            $("<tr>:first").append(
+                                $("<td>").text(`${firstname}`),
+                                $("<td>").text(`${lastname}`),
+                                $("<td>").text("(x)").css('background-color', 'orange')
+                            )
+                        );
+                    } else {
+                        $("table tbody").append(
+                            $("<tr>").append(
+                                $("<td>").text(`${firstname}`),
+                                $("<td>").text(`${lastname}`),
+                                $("<td>").text("(x)").css('background-color', 'orange')
+                            )
+                        );
+                    }
+                  
+
+                    $("td:contains('(x)')").on("click", function() {
+                        $(this).parent('tr').remove(); // remove row, "this" is cell with "(x)"
+                    });
+                };
+
+                function createForm() {
+                    $("table").before("<input type='text'><input type='text'><select><option value='before'>Before<option value='after'>After<input type='submit'>")
+                
+                    $("input[type='submit']").on("click", function(){
+                        addNewMenber(`${$("input[type='text']").first().val()}`, `${$("input[type='text']:nth-of-type(2)").val()}`, `${$('select').val()}`)
+                    })                    
+                };
+
+                createFamilyTree();
+                addNewMenber("Guillaume", "Salva");
+                addNewMenber("Arielle", "Snitz");
+                addNewMenber("Fanette", "Snitz");
+                addNewMenber("Gerard", "Snitz");
+                addNewMenber("Victor", "Snitz");
+                createForm();
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
