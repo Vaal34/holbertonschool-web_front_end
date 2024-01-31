@@ -24,10 +24,10 @@
                         for(let j = 0; j < content.length; j++) {
                             tableBody += "<td>" + content[j] + "</td>";
                         }
-                        tableBody += "</tr>"; // Correction ici, utilisez "</tr>" pour fermer la ligne
+                        tableBody += "</tr>";
                     }
 
-                    table += tableBody + "</tbody></table>"; // Correction ici, utilisez "</tbody>" pour fermer le corps de la table
+                    table += tableBody + "</tbody></table>";
                     $('body').append(table);
                 }
             createFamilyTree();
