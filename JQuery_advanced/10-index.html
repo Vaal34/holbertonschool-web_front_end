@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 1</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+        <script type="application/javascript">
+            $(document).ready(function() { // Utilisez $(document).ready() pour attendre que le DOM soit prêt
+             
+                function buildForm() {
+                    $('body').append(
+                        $("<form>").append(
+                            $("<div><label for='author'>Author</label><input type='text' id='author'>"),
+                            $("<div><label for='author'>Author</label><input type='text' id='title'>"),
+                            $("<input type='submit>")
+                        )
+                    );
+
+                    $("body input[type='submit']").on('click', function(){
+                        sendForm();
+                    })
+
+                };
+
+                function sendForm() {
+                    
+                }
+
+                function addPostRow(data) {
+                    $('body').append(`<p><span>Post created with id ${data.id}, title: ${data.title}, author: ${data.author}</span></p>`)
+                };
+
+                function listPosts() {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:3000/posts",
+                        success: function(responseData) {
+                            responseData.forEach(function(post) {
+                                addPostRow(post);
+                            });
+                        },
+                        error: function() {
+                            alert("Server Error");
+                        }
+                    });
+                };
+                
+                listPosts();
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
