@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <script src="./src/index.js"></script>
+            <script>
+                function setCookies() {
+                    document.cookie = `firstname=${document.getElementById('firstname').value}`;
+                    document.cookie = `email=${document.getElementById('email').value}`;
+
+                }
+
+                function showCookies() {
+                    let cookie = document.cookie.split(";")
+                    let firstname = cookie[0].split("=")[1].trim()
+                    let email = cookie[1].split("=")[1].trim()
+                    let valueCookie = document.createElement("p")
+                    valueCookie.textContent = `Cookie: firstname=${firstname}; email=${email}`
+                    document.body.appendChild(valueCookie);
+                }
+            </script>
+        </head>
+        <body>
+            <h1>Login to the website</h1>
+            <input type="text" id="firstname" placeholder="firstname">
+            <input type="text" id="email" placeholder="email">
+            <button onclick="setCookies()" >Log me in</button>
+            <h1>Cookies</h1>
+            <button onclick="showCookies()" >Show the cookies</button>
+        </body>
+    </html>
